@@ -1,0 +1,99 @@
+public class Maths3 {
+    // 1. Swap Two Numbers Without Using Third Variable
+    public static void swapNumbers(int a, int b) {
+        System.out.println("Before Swap: a = " + a + ", b = " + b);
+
+        a = a + b;
+        b = a - b;
+        a = a - b;
+
+        System.out.println("After Swap: a = " + a + ", b = " + b);
+    }
+
+    // 2. Print first 10 even numbers, skip numbers divisible by 4
+    public static void printEvenSkip4() {
+        int count = 0;
+        int num = 2;
+
+        System.out.println("First 10 even numbers (skipping divisible by 4):");
+
+        for(int i=2;i<=20;i+=2) {
+            if (i % 4 == 0) {
+                continue; // Skip numbers divisible by 4
+            }
+            System.out.print(i + " ");
+        }
+        System.out.println();
+    }
+
+    // 3. Fibonacci Series (first n terms)
+    public static void fibonacci(int n) {
+        int a = 0, b = 1;
+
+        System.out.println("Fibonacci Series:");
+        for (int i = 0; i < n; i++) {
+            System.out.print(a + " ");
+            int next = a + b;
+            a = b;
+            b = next;
+        }
+        System.out.println();
+    }
+
+    // 4. Binary to Decimal
+    public static void binaryToDecimal(int binary) {
+        int decimal = 0;
+        int base = 1;
+
+        while (binary > 0) {
+            int lastDigit = binary % 10;
+            decimal += lastDigit * base;
+            base *= 2;
+            binary /= 10;
+        }
+
+        System.out.println("Decimal value: " + decimal);
+    }
+
+    // 5. Pascal Triangle
+    public static void pascalTriangle(int rows) {
+        System.out.println("Pascal Triangle:");
+
+        for (int i = 0; i < rows; i++) {
+            int num = 1;
+
+            for (int j = 0; j <= i; j++) {
+                System.out.print(num + " ");
+                num = num * (i - j) / (j + 1);
+            }
+            System.out.println();
+        }
+    }
+
+    public static void main(String[] args) {
+
+        
+        swapNumbers(5, 10);
+
+        System.out.println();
+
+        
+        printEvenSkip4();
+
+        System.out.println();
+
+        
+        fibonacci(10);
+
+        System.out.println();
+
+        
+        binaryToDecimal(1011);
+
+        System.out.println();
+
+        
+        pascalTriangle(5);
+    }
+    
+}
